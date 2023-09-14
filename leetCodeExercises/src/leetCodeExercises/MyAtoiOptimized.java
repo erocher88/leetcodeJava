@@ -4,18 +4,12 @@ public class MyAtoiOptimized {
 	public static int stringToInt(String s) {
 		int sign = 1, index = 0;
 		long answer = 0;
-		
-		if (s == null || s.trim().length() == 0) return 0;
-		
-		while (s.charAt(index) == ' ') {
-			index++;
-		}
-		
+		s = s.trim();
+		if (s == null || s.length() == 0) return 0;
 		if (s.charAt(index) == '+' || s.charAt(index) == '-') {
 			sign = (s.charAt(index) == '-') ? -1 : sign;
 			index++;
 		}
-		
 		for (int i = index; i < s.length(); i++) {
 			if (Character.isDigit(s.charAt(i)) == false) {
 				break;
